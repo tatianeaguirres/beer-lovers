@@ -15,19 +15,29 @@ export class BeersService {
     let searchParams = new HttpParams();
     searchParams = searchParams.append('per_page', '4');
     searchParams = searchParams.append('food', food);
-    return this.fetchBeers(searchParams);
+    return this.fetchBeers(false, searchParams);
   }
 
   fetchBeerByType(type: string) {
     let searchParams = new HttpParams();
     searchParams = searchParams.append('per_page', '4');
     searchParams = searchParams.append('beer_name', type);
-    return this.fetchBeers(searchParams);
+    return this.fetchBeers(false, searchParams);
   }
 
-  fetchBeers(searchParams: HttpParams) {
+  fetchRandomBeer() {
+    return this.fetchBeers(true);
+  }
+
+  fetchBeers(random?: boolean, searchParams?: HttpParams) {
+    let url: string;
+    if (random) {
+      url = 'https://api.punkapi.com/v2/beers/random';
+    } else {
+      url = 'https://api.punkapi.com/v2/beers/';
+    }
     return this.http
-      .get<{ [key: number]: Beer }>('https://api.punkapi.com/v2/beers/',
+      .get<{ [key: number]: Beer }>(url,
       {
         params: searchParams,
         responseType: 'json'

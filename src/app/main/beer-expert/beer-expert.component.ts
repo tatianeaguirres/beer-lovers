@@ -1,15 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BeersService } from '../../shared/beers.service';
+
+import { Beer } from '../../shared/beer.model';
+
 @Component({
   selector: 'app-beer-expert',
   templateUrl: './beer-expert.component.html',
   styleUrls: ['./beer-expert.component.scss']
 })
 export class BeerExpertComponent implements OnInit {
+  beer: Beer[] = [];
+  error = null;
 
-  constructor() { }
+  constructor(private beersService: BeersService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.onFetchBeers();
   }
 
+  onFetchBeers() {
+    this.beersService.fetchRandomBeer().subscribe(
+      beer => {
+        this.beer = beer;
+      },
+      error => {
+        this.error = error.message;
+      }
+    );
+  }
 }
