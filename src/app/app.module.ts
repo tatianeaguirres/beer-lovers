@@ -11,6 +11,7 @@ import { BannerComponent } from './main/banner/banner.component';
 import { PopularBeersComponent } from './main/popular-beers/popular-beers.component';
 import { FoodPairingComponent } from './main/food-pairing/food-pairing.component';
 import { BeerExpertComponent } from './main/beer-expert/beer-expert.component';
+import { BeerDetailsComponent } from './main/beer-details/beer-details.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BeerExpertComponent } from './main/beer-expert/beer-expert.component';
     PopularBeersComponent,
     FoodPairingComponent,
     BeerExpertComponent,
+    BeerDetailsComponent,
   ],
   imports: [
     BrowserModule,
