@@ -1,4 +1,10 @@
 <p>food-pairing works!</p>
 <article>
+  <button
+    *ngFor="let foodPairingItem of foodPairing"
+    (click)="onFilterByFoodPairing(foodPairingItem)"
+  >
+    {{ foodPairingItem }}
+  </button>
   <app-beer-list [beers]="beers"></app-beer-list>
 </article>

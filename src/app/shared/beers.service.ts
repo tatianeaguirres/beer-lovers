@@ -11,10 +11,10 @@ export class BeersService {
 
   constructor(private http: HttpClient) {}
 
-  fetchBeerByFood() {
+  fetchBeerByFood(food: string) {
     let searchParams = new HttpParams();
     searchParams = searchParams.append('per_page', '4');
-    searchParams = searchParams.append('food', 'chicken');
+    searchParams = searchParams.append('food', food);
     return this.fetchBeers(searchParams);
   }
 

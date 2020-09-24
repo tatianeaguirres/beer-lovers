@@ -13,16 +13,21 @@ export class FoodPairingComponent implements OnInit {
   beers: Beer[] = [];
   isFetching = false;
   error = null;
+  foodPairing = ['salad', 'beef', 'chicken', 'fish', 'pasta', 'burger'];
 
   constructor(private beersService: BeersService) {}
 
   ngOnInit() {
-    this.onFetchBeers();
+    this.onFetchBeers(this.foodPairing[0]);
   }
 
-  onFetchBeers() {
+  onFilterByFoodPairing(food: string) {
+    this.onFetchBeers(food);
+  }
+
+  onFetchBeers(food: string) {
     this.isFetching = true;
-    this.beersService.fetchBeerByFood().subscribe(
+    this.beersService.fetchBeerByFood(food).subscribe(
       beers => {
         this.isFetching = false;
         this.beers = beers;
