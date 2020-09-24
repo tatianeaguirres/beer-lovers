@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './main/banner/banner.component';
 import { PopularBeersComponent } from './main/popular-beers/popular-beers.component';
 import { FoodPairingComponent } from './main/food-pairing/food-pairing.component';
+import { BeerExpertComponent } from './main/beer-expert/beer-expert.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FoodPairingComponent } from './main/food-pairing/food-pairing.component
     BannerComponent,
     PopularBeersComponent,
     FoodPairingComponent,
+    BeerExpertComponent,
   ],
   imports: [
     BrowserModule,
