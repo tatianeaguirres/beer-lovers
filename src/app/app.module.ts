@@ -12,6 +12,7 @@ import { PopularBeersComponent } from './main/popular-beers/popular-beers.compon
 import { FoodPairingComponent } from './main/food-pairing/food-pairing.component';
 import { BeerExpertComponent } from './main/beer-expert/beer-expert.component';
 import { BeerDetailsComponent } from './main/beer-details/beer-details.component';
+import { BeerListComponent } from './main/beer-list/beer-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BeerDetailsComponent } from './main/beer-details/beer-details.component
     FoodPairingComponent,
     BeerExpertComponent,
     BeerDetailsComponent,
+    BeerListComponent,
   ],
   imports: [
     BrowserModule,
