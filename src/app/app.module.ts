@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './main/banner/banner.component';
 import { PopularBeersComponent } from './main/popular-beers/popular-beers.component';
+import { FoodPairingComponent } from './main/food-pairing/food-pairing.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PopularBeersComponent } from './main/popular-beers/popular-beers.compon
     FooterComponent,
     BannerComponent,
     PopularBeersComponent,
+    FoodPairingComponent,
   ],
   imports: [
     BrowserModule,
