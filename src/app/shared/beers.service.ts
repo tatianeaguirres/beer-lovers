@@ -18,10 +18,10 @@ export class BeersService {
     return this.fetchBeers(searchParams);
   }
 
-  fetchBeerByType() {
+  fetchBeerByType(type: string) {
     let searchParams = new HttpParams();
     searchParams = searchParams.append('per_page', '4');
-    searchParams = searchParams.append('beer_name', 'porter');
+    searchParams = searchParams.append('beer_name', type);
     return this.fetchBeers(searchParams);
   }
 
