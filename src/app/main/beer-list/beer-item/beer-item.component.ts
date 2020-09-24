@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Beer } from './../../../shared/beer.model';
 
 @Component({
   selector: 'app-beer-item',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./beer-item.component.scss']
 })
 export class BeerItemComponent implements OnInit {
+  @Input() beer: Beer;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() { }
 
 }
