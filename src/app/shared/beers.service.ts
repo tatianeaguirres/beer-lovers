@@ -18,6 +18,13 @@ export class BeersService {
     return this.fetchBeers(searchParams);
   }
 
+  fetchBeerByType() {
+    let searchParams = new HttpParams();
+    searchParams = searchParams.append('per_page', '4');
+    searchParams = searchParams.append('beer_name', 'porter');
+    return this.fetchBeers(searchParams);
+  }
+
   fetchBeers(searchParams: HttpParams) {
     return this.http
       .get<{ [key: number]: Beer }>('https://api.punkapi.com/v2/beers/',
