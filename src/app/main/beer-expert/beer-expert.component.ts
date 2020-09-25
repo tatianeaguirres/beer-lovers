@@ -10,7 +10,7 @@ import { Beer } from '../../shared/beer.model';
   styleUrls: ['./beer-expert.component.scss']
 })
 export class BeerExpertComponent implements OnInit {
-  beer: Beer[] = [];
+  beers: Beer[] = [];
   error = null;
 
   constructor(private beersService: BeersService) {}
@@ -21,8 +21,8 @@ export class BeerExpertComponent implements OnInit {
 
   onFetchBeers() {
     this.beersService.fetchRandomBeer().subscribe(
-      beer => {
-        this.beer = beer;
+      beers => {
+        this.beers = beers;
       },
       error => {
         this.error = error.message;

@@ -1,3 +1,4 @@
-<p>Beer name: {{ beer.name }}</p>
-<p>Tagline: {{ beer.tagline }}</p>
-<hr/>
+<a class="beer-item" [routerLink]="['/beer', beer.id]">
+  <p>Beer name: {{ beer.name }}</p>
+  <p>Tagline: {{ beer.tagline }}</p>
+</a>
