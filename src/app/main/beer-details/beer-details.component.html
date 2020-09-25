@@ -1,1 +1,16 @@
 <p>beer-details works! {{ id }}</p>
+<article class="beer-details">
+  <p *ngIf="beers === null && !isFetching">No beers available!</p>
+  <p *ngIf="isFetching && !error">Loading...</p>
+  <div *ngFor="let beer of beers" >
+    <p>Name: {{ beer.name }}</p>
+    <p>Description: {{ beer.description }}</p>
+    <p>Food pairing: {{ beer.food_pairing }}</p>
+    <p>Tagline: {{ beer.tagline }}</p>
+  </div>
+  <div *ngIf="error">
+    <p>An Error Occurred!</p>
+    <p>{{ error }}</p>
+  </div>
+</article>
+

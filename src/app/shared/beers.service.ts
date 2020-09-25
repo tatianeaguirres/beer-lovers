@@ -29,6 +29,12 @@ export class BeersService {
     return this.fetchBeers(true);
   }
 
+  fetchBeerById(id: string) {
+    let searchParams = new HttpParams();
+    searchParams = searchParams.append('ids', id);
+    return this.fetchBeers(false, searchParams);
+  }
+
   fetchBeers(random?: boolean, searchParams?: HttpParams) {
     let url: string;
     if (random) {
