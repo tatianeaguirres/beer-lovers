@@ -9,7 +9,13 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() { }
+
+  showMenu(){
+    let navbar = document.getElementById('navbar');
+    navbar.classList.remove('desktop-only');
+    navbar.classList.remove('hide-menu');
+    navbar.classList.add('show-menu');
   }
 
 }

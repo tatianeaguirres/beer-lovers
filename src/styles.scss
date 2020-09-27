@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+.mobile-only {
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.desktop-only {
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+}

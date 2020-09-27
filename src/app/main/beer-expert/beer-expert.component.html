@@ -1,4 +1,4 @@
-<article *ngFor="let beer of beers" >
+<article *ngFor="let beer of beers" id="beer-expert">
   <a [routerLink]="['/beer', beer.id]">Discover your beer!</a>
   <p>beer-expert works! {{ beer.id }}</p>
 </article>
