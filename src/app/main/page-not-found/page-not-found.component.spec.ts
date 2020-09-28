@@ -19,7 +19,12 @@ describe('PageNotFoundComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create page not found component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render paragraph', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('p').textContent).toEqual('page-not-found works!');
   });
 });

@@ -19,7 +19,12 @@ describe('FooterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create footer component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render paragraph', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('p').textContent).toEqual('footer works!');
   });
 });

@@ -19,7 +19,7 @@ describe('BeerDetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create beer details component', () => {
     expect(component).toBeTruthy();
   });
 });
