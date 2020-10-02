@@ -10,13 +10,13 @@
 }
 
 .u-mobile-only {
-  @media screen and (min-width: 1024px) {
+  @include screen-tablet-landscape-and-bigger {
     display: none;
   }
 }
 
 .u-desktop-only {
-  @media screen and (max-width: 1023px) {
+  @include screen-tablet-landscape-and-smaller {
     display: none;
   }
 }

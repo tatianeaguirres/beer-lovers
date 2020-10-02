@@ -1,6 +1,7 @@
 // Breakpoints
 $breakpoint-mobile: 'only screen and (min-width: 320px) and (max-width: 479px)';
 $breakpoint-mobile-plus: 'only screen and (min-width: 480px) and (max-width: 767px)';
+$breakpoint-mobile-plus-and-bigger: 'only screen and (min-width: 480px)';
 $breakpoint-tablet-portrait: 'only screen and (min-width: 768px) and (max-width: 1023px)';
 $breakpoint-tablet-portrait-and-smaller: 'only screen and (max-width: 767px)';
 $breakpoint-tablet-portrait-and-bigger: 'only screen and (min-width: 768px)';
@@ -29,6 +30,12 @@ $breakpoint-desktop: 'only screen and (min-width: 1600px)';
 */
 @mixin screen-mobile-plus {
   @media #{$breakpoint-mobile-plus} {
+    @content;
+  }
+}
+
+@mixin screen-mobile-plus-and-bigger {
+  @media #{$breakpoint-mobile-plus-and-bigger} {
     @content;
   }
 }
