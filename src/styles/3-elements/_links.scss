@@ -1,0 +1,20 @@
+a {
+  text-decoration: none;
+  color: $color-black;
+  position: relative;
+  display: inline-block;
+  font-weight: $font-weight-medium;
+  overflow: hidden;
+  background: linear-gradient(to right, $color-dark-yellow, $color-red 50%, $color-black 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+
+  &:hover,
+  &:focus {
+    background-position: 0 100%;
+  }
+}

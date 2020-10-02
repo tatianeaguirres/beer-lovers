@@ -1,0 +1,22 @@
+.u-screen-reader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.u-mobile-only {
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.u-desktop-only {
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+}

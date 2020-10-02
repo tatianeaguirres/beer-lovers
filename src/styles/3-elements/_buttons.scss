@@ -1,0 +1,23 @@
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button__icon {
+  height: 3.5rem;
+  width: 3.5rem;
+  padding: 0;
+
+  img {
+    height: 3.5rem;
+    width: 3.5rem;
+    transform: none;
+    transition: transform .2s ease-in-out;
+  }
+
+  &:hover img,
+  &:focus img {
+    transform: rotate(10deg);
+  }
+}

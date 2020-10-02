@@ -1,0 +1,68 @@
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+html {
+  font-family: $font-family-body;
+  font-size: $font-size-root;
+
+  &.no--scroll {
+    overflow-y: hidden !important;
+  }
+}
+
+body {
+  font-size: $font-size-body;
+  line-height: $font-line-height-body;
+  hyphens: auto;
+  word-break: normal;
+  color: $color-black;
+  background-color: $color-alabaster-white;
+}
+
+p {
+  font-size: $font-size-body;
+  line-height: $font-line-height-body;
+  font-weight: $font-weight-regular;
+  margin: 0 0 $global-spacing-sm;
+}
+
+b {
+  font-weight: $font-weight-bold;
+}
+
+small {
+  font-size: 90%;
+}
+
+span[lang] {
+  font-style: italic;
+}
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+h5 {
+  @include h5;
+}
+
+h6 {
+  @include h6;
+}

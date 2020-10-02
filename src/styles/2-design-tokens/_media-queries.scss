@@ -1,0 +1,104 @@
+// Breakpoints
+$breakpoint-mobile: 'only screen and (min-width: 320px) and (max-width: 479px)';
+$breakpoint-mobile-plus: 'only screen and (min-width: 480px) and (max-width: 767px)';
+$breakpoint-tablet-portrait: 'only screen and (min-width: 768px) and (max-width: 1023px)';
+$breakpoint-tablet-portrait-and-smaller: 'only screen and (max-width: 767px)';
+$breakpoint-tablet-portrait-and-bigger: 'only screen and (min-width: 768px)';
+$breakpoint-tablet-landscape: 'only screen and (min-width: 1024px) and (max-width: 1239px)';
+$breakpoint-tablet-landscape-and-smaller: 'only screen and (max-width: 1023px)';
+$breakpoint-tablet-landscape-and-bigger: 'only screen and (min-width: 1024px)';
+$breakpoint-laptop: 'only screen and (min-width: 1240px) and (max-width: 1599px)';
+$breakpoint-laptop-and-bigger: 'only screen and (min-width: 1240px)';
+$breakpoint-desktop: 'only screen and (min-width: 1600px)';
+
+// Media Queries
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@mixin screen-mobile {
+  @media #{$breakpoint-mobile} {
+    @content;
+  }
+}
+
+/*
+  ##Device = Mobile Plus, Low Resolution Tablets
+  ##Screen = B/w 480px to 767px
+*/
+@mixin screen-mobile-plus {
+  @media #{$breakpoint-mobile-plus} {
+    @content;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1023px
+*/
+@mixin screen-tablet-portrait {
+  @media #{$breakpoint-tablet-portrait} {
+    @content;
+  }
+}
+
+@mixin screen-tablet-portrait-and-smaller {
+  @media #{$breakpoint-tablet-portrait-and-smaller} {
+    @content;
+  }
+}
+
+@mixin screen-tablet-portrait-and-bigger {
+  @media #{$breakpoint-tablet-portrait-and-bigger} {
+    @content;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (Landscape)
+  ##Screen = B/w 1024px to 1239px
+*/
+@mixin screen-tablet-landscape {
+  @media #{$breakpoint-tablet-landscape} {
+    @content;
+  }
+}
+
+@mixin screen-tablet-landscape-and-smaller {
+  @media #{$breakpoint-tablet-landscape-and-smaller} {
+    @content;
+  }
+}
+
+@mixin screen-tablet-landscape-and-bigger {
+  @media #{$breakpoint-tablet-landscape-and-bigger} {
+    @content;
+  }
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1240px to 1599px
+*/
+@mixin screen-laptop {
+  @media #{$breakpoint-laptop} {
+    @content;
+  }
+}
+
+@mixin screen-laptop-and-bigger {
+  @media #{$breakpoint-laptop-and-bigger} {
+    @content;
+  }
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1600px to higher resolution desktops
+*/
+@mixin screen-desktop {
+  @media #{$breakpoint-desktop} {
+    @content;
+  }
+}

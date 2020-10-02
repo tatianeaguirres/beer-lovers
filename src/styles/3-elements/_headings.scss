@@ -1,0 +1,41 @@
+@mixin heading {
+  font-family: $font-family-body;
+  font-weight: $font-weight-regular;
+  margin: 0;
+}
+
+@mixin h1 {
+  @include heading;
+  font-size: $font-size-h1;
+  line-height: $font-line-height-h1;
+}
+
+@mixin h2 {
+  @include heading;
+  font-size: $font-size-h2;
+  line-height: $font-line-height-h2;
+}
+
+@mixin h3 {
+  @include heading;
+  font-size: $font-size-h3;
+  line-height: $font-line-height-h3;
+}
+
+@mixin h4 {
+  @include heading;
+  font-size: $font-size-h4;
+  line-height: $font-line-height-h4;
+}
+
+@mixin h5 {
+  @include heading;
+  font-size: $font-size-h5;
+  line-height: $font-line-height-h5;
+}
+
+@mixin h6 {
+  @include heading;
+  font-size: $font-size-h6;
+  line-height: $font-line-height-h6;
+}

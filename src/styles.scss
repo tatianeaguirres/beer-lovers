@@ -1,13 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+@charset "UTF-8";
 
-.mobile-only {
-  @media screen and (min-width: 1024px) {
-    display: none;
-  }
-}
+// 1. Generic
+@import
+  "styles/1-generic/normalize",
+  "styles/1-generic/font-face";
 
-.desktop-only {
-  @media screen and (max-width: 1023px) {
-    display: none;
-  }
-}
+// 2. Design Tokens
+@import
+  "styles/2-design-tokens/colors",
+  "styles/2-design-tokens/fonts",
+  "styles/2-design-tokens/media-queries",
+  "styles/2-design-tokens/spacing",
+  "styles/2-design-tokens/typography";
+
+// 3. Elements
+@import
+  "styles/3-elements/buttons",
+  "styles/3-elements/forms",
+  "styles/3-elements/headings",
+  "styles/3-elements/images",
+  "styles/3-elements/links",
+  "styles/3-elements/lists";
+
+// 4. Settings
+@import
+	"styles/4-settings/global";
+
+// 5. Tools
+// media queries
+
+// 6. Skeleton
+@import
+"styles/6-skeleton/layouts";
+
+// 7. Components
+
+// 8. Utilities
+@import
+  "styles/8-utilities/modifiers";
+
+// Shame CSS
+@import
+  "styles/shame";
