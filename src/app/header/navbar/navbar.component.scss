@@ -1,39 +1,74 @@
-.navbar {
+@import '../../../styles/2-design-tokens/typography';
+@import '../../../styles/2-design-tokens/spacing';
+@import '../../../styles/2-design-tokens/colors';
+@import '../../../styles/2-design-tokens/media-queries';
+
+.c-navbar {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 35rem;
   width: 70%;
   height: 100%;
   position: fixed;
   z-index: 2;
   top: 0;
   right: 0;
-  background-color: lightyellow;
+  background-color: $color-alabaster-white;
+  box-shadow: 0 0 1.3rem 0 rgba($color-gray-800, 0.4);
+
+  @include screen-tablet-landscape-and-smaller {
+    .navbar__button-wrap {
+      height: auto;
+      width: 100%;
+      padding: $global-spacing-lg;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      box-sizing: border-box;
+    }
+  }
 
   ul {
     display: flex;
     flex-direction: column;
     width: 100%;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
     li {
-      padding: 10px;
+      padding: $global-spacing-sm;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+
+      a {
+        font-size: $font-size-body;
+      }
     }
   }
 
-  // mobile
-  @media screen and (max-width: 1023px) {
-    padding: 30px;
-  }
-
-  // desktop
-  @media screen and (min-width: 1024px) {
+  @include screen-tablet-landscape-and-bigger {
     flex-direction: row;
     width: 100%;
-    height: 70px;
+    max-width: 100%;
+    height: auto;
     position: relative;
+    box-shadow: none;
 
     ul {
       flex-direction: row;
+      min-width: 34rem;
+
+      li {
+        width: auto;
+        padding: 0 0 0 $global-spacing-md;
+      }
     }
   }
 }

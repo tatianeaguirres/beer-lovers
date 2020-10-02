@@ -6,21 +6,22 @@ import { Component, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  isMobile = window.innerWidth <= 1023;
 
-  constructor(private el: ElementRef) { }
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit() {
     this.onCloseWhenClickingOnMobile();
   }
 
   onCloseOnMobile() {
-    this.el.nativeElement.classList.remove('show-menu');
-    this.el.nativeElement.classList.add('hide-menu');
+    this.elementRef.nativeElement.classList.remove('header__navbar--show');
+    this.elementRef.nativeElement.classList.add('header__navbar--hide');
   }
 
   onCloseWhenClickingOnMobile() {
     if (window.innerWidth <= 1023) {
-      this.el.nativeElement.addEventListener('click', () => {
+      this.elementRef.nativeElement.addEventListener('click', () => {
         this.onCloseOnMobile();
       });
     }

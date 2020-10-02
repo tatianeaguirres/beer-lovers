@@ -1,5 +1,15 @@
 <header class="c-header">
-  <a [routerLink]="['/']"><h1>BeerLoversApp</h1></a>
-  <button id="open-menu" class="mobile-only" (click)="showMenu()">Open menu</button>
-  <app-navbar id="navbar" class="desktop-only"></app-navbar>
+  <a [routerLink]="['/']">
+    <h1>beer<b>lovers</b></h1>
+  </a>
+  <button
+    id="open-menu"
+    class="u-mobile-only button__icon"
+    (click)="showMenu()"
+    aria-label="open menu"
+    [attr.aria-hidden]="isMobile ? false : true"
+  >
+    <img src="/assets/menu.svg" alt="">
+  </button>
+  <app-navbar id="navbar" class="u-desktop-only"></app-navbar>
 </header>

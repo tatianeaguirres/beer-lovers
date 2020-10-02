@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  isMobile = window.innerWidth <= 1023;
 
   constructor() { }
 
@@ -13,9 +14,9 @@ export class HeaderComponent implements OnInit {
 
   showMenu(){
     let navbar = document.getElementById('navbar');
-    navbar.classList.remove('desktop-only');
-    navbar.classList.remove('hide-menu');
-    navbar.classList.add('show-menu');
+    navbar.classList.remove('u-desktop-only');
+    navbar.classList.remove('header__navbar--hide');
+    navbar.classList.add('header__navbar--show');
   }
 
 }

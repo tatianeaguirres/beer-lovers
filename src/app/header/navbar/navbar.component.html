@@ -1,15 +1,20 @@
-<nav class="navbar">
-  <button id="close-menu" class="mobile-only" (click)="onCloseOnMobile()">Close menu</button>
-  <ul>
-    <li>
-      <a href="#popular-beers">Popular Beers</a>
-    </li>
-    <li>
-      <a href="#food-pairing">Food Pairing</a>
-    </li>
-    <li>
-      <a href="#beer-expert">Beer Expert</a>
-    </li>
+<nav class="c-navbar" aria-labelledby="main-menu-label">
+  <h2 id="main-menu-label" class="u-screen-reader-only">Main Menu</h2>
+  <div class="navbar__button-wrap u-mobile-only">
+    <button
+      id="close-menu"
+      class="button__icon u-mobile-only"
+      (click)="onCloseOnMobile()"
+      aria-label="close menu"
+      [attr.aria-hidden]="isMobile ? false : true"
+    >
+      <img src="/assets/close.svg" alt="">
+    </button>
+  </div>
+  <ul role="menubar">
+    <li role="menuitem"><a href="#popular-beers">Popular Beers</a></li>
+    <li role="menuitem"><a href="#food-pairing">Food Pairing</a></li>
+    <li role="menuitem"><a href="#beer-expert">Beer Expert</a></li>
   </ul>
 </nav>
 
