@@ -1,10 +1,14 @@
-<article id="popular-beers">
-  <p>popular-beers works!</p>
-  <button
-    *ngFor="let beerTypesItem of beerTypes"
-    (click)="onFilterByBeerType(beerTypesItem)"
-  >
-    {{ beerTypesItem }}
-  </button>
+<article id="popular-beers" class="c-popular-beers section">
+  <h2>Popular Beers</h2>
+  <div class="popular-beers__buttons-wrap">
+    <button
+      *ngFor="let beerTypesItem of beerTypes;let index = index"
+      (click)="onFilterByBeerType(beerTypesItem, index)"
+      [ngClass]="{ 'button__selection--active' : index === activeIndex }"
+      class="button__selection"
+    >
+      {{ beerTypesItem }}
+    </button>
+  </div>
   <app-beer-list [beers]="beers"></app-beer-list>
 </article>
