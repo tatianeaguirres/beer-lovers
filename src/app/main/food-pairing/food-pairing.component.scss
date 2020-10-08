@@ -1,3 +1,11 @@
-article {
-  padding-left: 30px;
+@import '../../../styles/2-design-tokens/spacing';
+
+.c-food-pairing {
+  .food-pairing__buttons-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: $global-spacing-sm;
+  }
 }

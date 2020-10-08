@@ -14,14 +14,17 @@ export class FoodPairingComponent implements OnInit {
   isFetching = false;
   error = null;
   foodPairing = ['salad', 'beef', 'chicken', 'fish', 'pasta', 'burger'];
+  activeIndex;
 
   constructor(private beersService: BeersService) {}
 
   ngOnInit() {
     this.onFetchBeers(this.foodPairing[0]);
+    this.activeIndex = 0;
   }
 
-  onFilterByFoodPairing(food: string) {
+  onFilterByFoodPairing(food: string, index: number) {
+    this.activeIndex = index;
     this.onFetchBeers(food);
   }
 
