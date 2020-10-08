@@ -1,4 +1,7 @@
-<a class="beer-item" [routerLink]="['/beer', beer.id]">
-  <p>Beer name: {{ beer.name }}</p>
-  <p>Tagline: {{ beer.tagline }}</p>
+<a class="c-beer-item" [routerLink]="['/beer', beer.id]">
+  <div class="beer-item__wrap">
+    <img src="{{beer.image_url}}">
+    <h3>{{ beer.name }}</h3>
+    <p>{{ beer.tagline }}</p>
+  </div>
 </a>

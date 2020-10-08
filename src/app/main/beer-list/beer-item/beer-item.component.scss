@@ -1,6 +1,90 @@
-a.beer-item {
-  border: 1px solid black;
-  padding: 10px;
-  background-color: lightyellow;
-  display: block;
+@import '../../../../styles/2-design-tokens/spacing';
+@import '../../../../styles/2-design-tokens/colors';
+@import '../../../../styles/2-design-tokens/media-queries';
+@import '../../../../styles/5-tools/animations';
+
+a.c-beer-item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 40rem;
+  min-width: 24rem;
+  height: auto;
+  margin: 0 auto;
+
+  .beer-item__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 40rem;
+    min-width: 24rem;
+    height: auto;
+    padding: $global-spacing-md;
+    border-radius: 2.5rem;
+    box-sizing: border-box;
+    background-color: transparent;
+    transition: background-color .2s ease-in-out;
+  }
+
+  @include screen-tablet-portrait {
+    max-width: 30rem;
+    min-height: 42.5rem;
+
+    .beer-item__wrap {
+      max-width: 30rem;
+      min-height: 42.5rem;
+    }
+  }
+
+  @include screen-tablet-landscape-and-bigger {
+    max-width: 20rem;
+    min-width: 20rem;
+    min-height: 32rem;
+
+    .beer-item__wrap {
+      padding: $global-spacing-xs;
+      max-width: 20rem;
+      min-width: 20rem;
+      min-height: 32rem;
+    }
+  }
+
+  img {
+    width: auto;
+    max-height: 18rem;
+  }
+
+  h3 {
+    margin-top: $global-spacing-sm;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 39rem;
+
+    @include screen-tablet-portrait {
+      max-width: 29rem;
+    }
+
+    @include screen-tablet-landscape-and-bigger {
+      max-width: 19rem;
+    }
+  }
+
+  p {
+    text-align: center;
+  }
+
+  &:hover .beer-item__wrap,
+  &:focus .beer-item__wrap {
+    background-color: $color-light-blue;
+  }
+
+  // &:hover img,
+  // &:focus img {
+  //   -webkit-animation: heartbeat 2s ease-in-out infinite forwards;
+  //   animation: heartbeat 2s ease-in-out infinite forwards;
+  // }
 }
