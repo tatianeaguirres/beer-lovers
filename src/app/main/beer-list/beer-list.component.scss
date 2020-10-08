@@ -1,3 +1,22 @@
-article {
-  padding-left: 30px;
+@import '../../../styles/2-design-tokens/media-queries';
+
+.c-beer-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+
+  .beer-list__wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+
+    @include screen-tablet-portrait-and-bigger {
+      flex-direction: row;
+    }
+  }
 }

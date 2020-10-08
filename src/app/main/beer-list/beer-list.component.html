@@ -1,8 +1,7 @@
-<p>beer-list works!</p>
-<article>
+<article class="c-beer-list">
   <p *ngIf="beers === null && !isFetching">No beers available!</p>
   <p *ngIf="isFetching && !error">Loading...</p>
-  <div *ngIf="beers != null && !isFetching">
+  <div class="beer-list__wrap" *ngIf="beers != null && !isFetching">
     <app-beer-item *ngFor="let beerItem of beers" [beer]="beerItem"></app-beer-item>
   </div>
   <div *ngIf="error">
