@@ -15,12 +15,17 @@
   background-size: 9rem;
   background-position: right top;
   background-origin: content-box;
+  padding: $global-spacing-md;
 
   @include screen-mobile-plus-and-bigger {
     background: $color-light-yellow;
     flex-direction: row;
     align-items: center;
     height: 22rem;
+  }
+
+  @include screen-tablet-landscape-and-bigger {
+    padding: $global-spacing-lg;
   }
 
   img {

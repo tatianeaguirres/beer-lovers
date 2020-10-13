@@ -7,7 +7,7 @@ a.c-beer-item {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 40rem;
+  max-width: 30rem;
   min-width: 24rem;
   height: auto;
   margin: 0 auto;
@@ -19,7 +19,7 @@ a.c-beer-item {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 40rem;
+    max-width: 30rem;
     min-width: 24rem;
     height: auto;
     padding: $global-spacing-md;
@@ -31,11 +31,13 @@ a.c-beer-item {
 
   @include screen-tablet-portrait {
     max-width: 30rem;
-    min-height: 42.5rem;
+    min-width: 25rem;
+    min-height: 32rem;
 
     .beer-item__wrap {
       max-width: 30rem;
-      min-height: 42.5rem;
+      min-width: 25rem;
+      min-height: 32rem;
     }
   }
 
@@ -62,10 +64,10 @@ a.c-beer-item {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 39rem;
+    max-width: 24rem;
 
     @include screen-tablet-portrait {
-      max-width: 29rem;
+      max-width: 26rem;
     }
 
     @include screen-tablet-landscape-and-bigger {
@@ -82,9 +84,9 @@ a.c-beer-item {
     background-color: $color-light-blue;
   }
 
-  // &:hover img,
-  // &:focus img {
-  //   -webkit-animation: heartbeat 2s ease-in-out infinite forwards;
-  //   animation: heartbeat 2s ease-in-out infinite forwards;
-  // }
+  &:hover,
+  &:focus {
+    color: $color-black;
+    text-decoration: underline;
+  }
 }
