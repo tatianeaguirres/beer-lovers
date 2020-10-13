@@ -1,0 +1,54 @@
+@import '../../../styles/2-design-tokens/typography';
+@import '../../../styles/2-design-tokens/spacing';
+@import '../../../styles/2-design-tokens/colors';
+@import '../../../styles/2-design-tokens/media-queries';
+
+.c-beer-expert {
+  min-height: 22rem;
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: $global-spacing-md;
+  background: $color-light-yellow;
+
+  @include screen-mobile-plus-and-bigger {
+    flex-direction: row;
+    height: 26rem;
+  }
+
+  @include screen-tablet-landscape-and-bigger {
+    padding: $global-spacing-lg;
+  }
+
+  img {
+    width: 50%;
+    max-height: 18rem;
+    margin-bottom: $global-spacing-md;
+
+    @include screen-mobile-plus-and-bigger {
+      width: 40%;
+      max-height: 29rem;
+      margin: 0 $global-spacing-sm 0 0;
+    }
+
+  }
+
+  h2 {
+    font-size: 2.9rem;
+    font-weight: $font-weight-black;
+    line-height: 3.8rem;
+    text-align: start;
+
+    @include screen-tablet-portrait-and-bigger {
+      font-size: 3.5rem;
+    }
+  }
+
+  p {
+    margin-bottom: $global-spacing-md;
+    max-width: 27rem;
+  }
+}
