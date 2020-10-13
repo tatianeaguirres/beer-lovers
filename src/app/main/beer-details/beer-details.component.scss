@@ -1,5 +1,124 @@
-article.beer-details {
-  background-color: lightyellow;
-  border: 1px solid black;
-  padding: 10px;
+@import '../../../styles/2-design-tokens/typography';
+@import '../../../styles/2-design-tokens/spacing';
+@import '../../../styles/2-design-tokens/colors';
+@import '../../../styles/2-design-tokens/media-queries';
+
+.c-beer-details {
+
+  .beer-details__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: $global-spacing-md;
+
+    @include screen-tablet-portrait-and-bigger {
+      margin-bottom: $global-spacing-xs;
+    }
+
+    img {
+      max-width: 8rem;
+    }
+  }
+
+  .beer-details__return-link {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+
+    img {
+      max-width: 5rem;
+      max-height: 5rem;
+    }
+  }
+
+  .beer-details__wrap-details {
+    display: flex;
+    flex-direction: column;
+
+    @include screen-tablet-portrait-and-bigger {
+      flex-direction: row;
+    }
+
+    article:first-child {
+      height: auto;
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-light-blue;
+      border-radius: 2.5rem;
+      margin-bottom: $global-spacing-md;
+      padding: $global-spacing-md;
+
+      @include screen-tablet-portrait-and-bigger {
+        width: 25%;
+        max-height: 25rem;
+        margin: 0 $global-spacing-md 0 0;
+      }
+
+      img {
+        width: auto;
+        max-height: 20rem;
+      }
+    }
+
+    article:last-child {
+      @include screen-tablet-portrait-and-bigger {
+        width: 75%;
+      }
+    }
+  }
+
+  h2,
+  h3 {
+    text-align: left;
+  }
+
+  h3 {
+    margin-bottom: $global-spacing-xs;
+  }
+
+  blockquote {
+    margin: $global-spacing-xs;
+    text-align: center;
+    color: $color-gray-900;
+    font-style: italic;
+  }
+
+  table{
+    border-collapse: collapse;
+    margin-bottom: $global-spacing-sm;
+
+    svg {
+      transform: rotate(90deg);
+    }
+
+    tr:nth-child(odd) {
+      background-color: $color-gray-100;
+    }
+
+    tr {
+      border-bottom: 1px solid $color-gray-200;
+    }
+
+    th,
+    td {
+      padding: .5rem;
+      vertical-align: middle;
+    }
+
+    th {
+      width: 15rem;
+      text-align: left;
+      font-weight: normal;
+    }
+
+    td {
+      width: 9rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+
+
 }

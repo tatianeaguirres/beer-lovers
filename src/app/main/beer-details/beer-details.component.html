@@ -1,16 +1,83 @@
-<p>beer-details works! {{ id }}</p>
-<article class="beer-details">
-  <p *ngIf="beers === null && !isFetching">No beers available!</p>
-  <p *ngIf="isFetching && !error">Loading...</p>
-  <div *ngFor="let beer of beers" >
-    <p>Name: {{ beer.name }}</p>
-    <p>Description: {{ beer.description }}</p>
-    <p>Food pairing: {{ beer.food_pairing }}</p>
-    <p>Tagline: {{ beer.tagline }}</p>
-  </div>
-  <div *ngIf="error">
-    <p>An Error Occurred!</p>
+<article class="c-beer-details section">
+
+  <article class="beer-details__header">
+    <a [routerLink]="['/']" aria-label="return to homepage" title="return to homepage" class="beer-details__return-link">
+      <img src="/assets/return.svg" aria-hidden="true">
+    </a>
+    <img src="/assets/hop.svg" aria-hidden="true">
+  </article>
+
+  <article *ngFor="let beer of beers" class="beer-details__wrap-details">
+
+    <article>
+      <img src="{{ beer.image_url }}" alt="Bottle of beer {{ beer.name }}.">
+    </article>
+
+    <article>
+      <section>
+        <h2>{{ beer.name }}</h2>
+        <p>{{ beer.description }}</p>
+        <blockquote>
+          <p>{{ beer.tagline }}</p>
+        </blockquote>
+      </section>
+
+      <section *ngIf="beer.food_pairing" >
+        <h3>Food Pairing</h3>
+        <ul>
+          <li *ngFor="let foodItem of beer.food_pairing">{{ foodItem }}.</li>
+        </ul>
+      </section>
+
+      <section *ngIf="beer.srm || beer.ebc || this.beerColor">
+        <h3>Beer Color</h3>
+        <table>
+          <tr *ngIf="beer.srm">
+            <th scope="row"><abbr tabindex="0" title="Standard Reference Method">SRM</abbr></th>
+            <td>{{ beer.srm }}</td>
+          </tr>
+          <tr *ngIf="beer.ebc">
+            <th scope="row"><abbr tabindex="0" title="European Brewery Convention">EBC</abbr></th>
+            <td>{{ beer.ebc }}</td>
+          </tr>
+          <tr *ngIf="this.beerColor">
+            <th scope="row">Color</th>
+            <td [ngStyle]="{'background-color': this.beerColor, 'color': this.beerColor}">{{ this.beerColorName }}</td>
+          </tr>
+        </table>
+      </section>
+
+      <section *ngIf="beer.abv">
+        <h3>Strength</h3>
+        <table>
+          <tr>
+            <th scope="row"><abbr tabindex="0" title="Alcohol By Volume">ABV</abbr></th>
+            <td>{{ beer.abv }}%</td>
+          </tr>
+        </table>
+      </section>
+
+      <section *ngIf="beer.ibu">
+        <h3>Bitterness</h3>
+        <table>
+          <tr>
+            <th scope="row"><abbr tabindex="0" title="International Bittering Units">IBU</abbr></th>
+            <td>{{ beer.ibu }}</td>
+          </tr>
+        </table>
+      </section>
+    </article>
+
+  </article>
+
+  <section *ngIf="error" class="section">
+    <h2>An Error Occurred!</h2>
     <p>{{ error }}</p>
-  </div>
+  </section>
+
+  <h2 *ngIf="beers === null && !isFetching">No beers available!</h2>
+
+  <h2 *ngIf="isFetching && !error">Loading...</h2>
+
 </article>
 
