@@ -66,3 +66,28 @@ h5 {
 h6 {
   @include h6;
 }
+
+abbr {
+  cursor: help;
+  position: relative;
+}
+
+abbr[title]:hover::after,
+abbr[title]:focus::after {
+  content: attr(title);
+
+  /* position tooltip like the native one */
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: auto;
+  white-space: nowrap;
+
+  /* style tooltip */
+  background-color: $color-black;
+  color: $color-white;
+  border-radius: .3rem;
+  box-shadow: .1rem .1rem .5rem 0 rgba($color-black, 0.4);
+  font-size: 1.4rem;
+  padding: .3rem .5rem;
+}

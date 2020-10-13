@@ -1,6 +1,6 @@
 @mixin heading {
   font-family: $font-heading;
-  font-weight: $font-weight-regular;
+  font-weight: $font-weight-bold;
   margin: 0;
 }
 
@@ -8,13 +8,13 @@
   @include heading;
   font-size: $font-size-h1;
   line-height: $font-line-height-h1;
+  font-weight: $font-weight-regular;
 }
 
 @mixin h2 {
   @include heading;
   font-size: $font-size-h2;
   line-height: $font-line-height-h2;
-  font-weight: $font-weight-bold;
   text-align: center;
   margin-bottom: $global-spacing-sm;
 }
@@ -23,6 +23,7 @@
   @include heading;
   font-size: $font-size-h3;
   line-height: $font-line-height-h3;
+  text-align: center;
 }
 
 @mixin h4 {

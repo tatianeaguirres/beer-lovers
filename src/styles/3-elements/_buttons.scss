@@ -23,9 +23,9 @@ button {
 }
 
 .button__selection {
-  padding: 5px 15px;
-  border-radius: 20px;
-  margin: 0 10px 10px 0;
+  padding: .5rem 1.5rem;
+  border-radius: 2rem;
+  margin: 0 1rem 1rem 0;
   background-color: $color-gray-200;
   transition: background-color .2s ease-in-out;
 
@@ -36,5 +36,22 @@ button {
 
   &--active {
     background-color: $color-light-blue;
+  }
+}
+
+.button__primary {
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  background-color: $color-blue;
+  color: $color-black;
+  border: .1rem solid transparent;
+  transition: all .3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $color-black;
+    background-color: $color-dark-blue;
+    border: .1rem solid $color-black;
   }
 }

@@ -1,19 +1,16 @@
 a {
   text-decoration: none;
   color: $color-black;
-  position: relative;
   font-weight: $font-weight-medium;
-  overflow: hidden;
-  background: linear-gradient(to right, $color-dark-yellow, $color-red 50%, $color-black 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 100%;
-  background-position: 100%;
-  transition: background-position 275ms ease;
+  transition: color .2s ease-in-out;
 
   &:hover,
   &:focus {
-    background-position: 0 100%;
+    color: $color-red;
   }
+}
+
+.anchor-link {
+  position: absolute;
+  top: -14rem;
 }
