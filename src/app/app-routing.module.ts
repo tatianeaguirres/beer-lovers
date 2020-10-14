@@ -4,9 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { BeerDetailsComponent } from './main/beer-details/beer-details.component';
 import { PageNotFoundComponent } from './main/page-not-found/page-not-found.component';
+import { AboutComponent } from './main/about/about.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'beer/:id', component: BeerDetailsComponent },
   { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/not-found' }

@@ -1,0 +1,79 @@
+@import '../../../styles/2-design-tokens/typography';
+@import '../../../styles/2-design-tokens/spacing';
+@import '../../../styles/2-design-tokens/colors';
+@import '../../../styles/2-design-tokens/media-queries';
+
+.c-about {
+
+  .about__header {
+    height: auto;
+    border-radius: 2.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    background: $color-light-blue;
+    padding: $global-spacing-md;
+    margin-bottom: $global-spacing-md;
+
+    @include screen-mobile-plus-and-bigger {
+      flex-direction: row;
+      align-items: center;
+      height: 8rem;
+      margin-bottom: $global-spacing-xlg;
+    }
+
+    h2 {
+      text-align: start;
+      margin: 0;
+    }
+
+    img {
+      width: 50%;
+      max-height: 15rem;
+      margin-bottom: $global-spacing-sm;
+
+      @include screen-mobile-plus-and-bigger {
+        width: 25%;
+        max-height: 18rem;
+        margin: 0;
+      }
+    }
+  }
+
+  .about__tech-stack {
+    margin: $global-spacing-xlg 0;
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 34rem;
+      align-items: center;
+      margin-bottom: $global-spacing-sm;
+    }
+
+    a img {
+      height: 4rem;
+      width: 4rem;
+      transform: none;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    a:hover img,
+    a:focus img {
+      transform: rotate(20deg);
+    }
+  }
+
+  h3 {
+    text-align: left;
+    margin-bottom: $global-spacing-sm;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+}

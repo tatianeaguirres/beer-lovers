@@ -14,6 +14,10 @@
   width: auto;
   margin: 0 $global-spacing-xs $global-spacing-xlg;
 
+  @include screen-tablet-portrait {
+    margin: 0 $global-spacing-sm $global-spacing-xlg;
+  }
+
   @include screen-tablet-landscape-and-bigger {
     margin: 0 0 7rem 0;
   }

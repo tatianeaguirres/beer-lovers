@@ -17,6 +17,7 @@ import { BeerListComponent } from './main/beer-list/beer-list.component';
 import { BeerItemComponent } from './main/beer-list/beer-item/beer-item.component';
 import { PageNotFoundComponent } from './main/page-not-found/page-not-found.component';
 import { NavbarComponent } from './header/navbar/navbar.component';
+import { AboutComponent } from './main/about/about.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NavbarComponent } from './header/navbar/navbar.component';
     BeerListComponent,
     BeerItemComponent,
     PageNotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

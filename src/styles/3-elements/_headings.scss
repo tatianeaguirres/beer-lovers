@@ -17,12 +17,14 @@
   line-height: $font-line-height-h2;
   text-align: center;
   margin-bottom: $global-spacing-sm;
+  letter-spacing: .8px;
 }
 
 @mixin h3 {
   @include heading;
   font-size: $font-size-h3;
   line-height: $font-line-height-h3;
+  letter-spacing: .8px;
   text-align: center;
 }
 
