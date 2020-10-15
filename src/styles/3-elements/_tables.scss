@@ -1,0 +1,34 @@
+table {
+  border-collapse: collapse;
+  margin-bottom: $global-spacing-sm;
+
+  svg {
+    transform: rotate(90deg);
+  }
+
+  tr:nth-child(odd) {
+    background-color: $color-gray-100;
+  }
+
+  tr {
+    border-bottom: 1px solid $color-gray-200;
+  }
+
+  th,
+  td {
+    padding: .5rem;
+    vertical-align: middle;
+  }
+
+  th {
+    width: 15rem;
+    text-align: left;
+    font-weight: normal;
+  }
+
+  td {
+    width: 9rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+}

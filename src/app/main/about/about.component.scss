@@ -4,7 +4,6 @@
 @import '../../../styles/2-design-tokens/media-queries';
 
 .c-about {
-
   .about__header {
     height: auto;
     border-radius: 2.5rem;
@@ -37,6 +36,11 @@
         width: 25%;
         max-height: 18rem;
         margin: 0;
+      }
+
+      &:hover {
+        -webkit-animation: heartbeat 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) infinite backwards;
+        animation: heartbeat 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) infinite backwards;
       }
     }
   }

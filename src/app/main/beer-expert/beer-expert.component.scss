@@ -34,6 +34,10 @@
       margin: 0 $global-spacing-sm 0 0;
     }
 
+    &:hover {
+      -webkit-animation: heartbeat 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) infinite backwards;
+      animation: heartbeat 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) infinite backwards;
+    }
   }
 
   h2 {
