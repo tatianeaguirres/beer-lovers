@@ -9,9 +9,16 @@ import { Beer } from './../../../shared/beer.model';
 })
 export class BeerItemComponent implements OnInit {
   @Input() beer: Beer;
+  isLoadingImage: boolean;
 
-  constructor() { }
+  constructor() {
+    this.isLoadingImage = true;
+  }
 
   ngOnInit() { }
+
+  onHideImageLoader() {
+    this.isLoadingImage = false;
+  }
 
 }

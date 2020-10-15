@@ -1,23 +1,33 @@
 <article class="c-beer-details section">
 
   <article class="beer-details__header">
-    <a [routerLink]="['/']" aria-label="return to homepage" title="return to homepage" class="beer-details__return-link">
-      <img src="/assets/return.svg" aria-hidden="true">
+    <a [routerLink]="['/']" title="Return to homepage." aria-label="Return to homepage." class="beer-details__return-link">
+      <img src="/assets/return.svg" aria-hidden="true" alt="">
     </a>
-    <img src="/assets/hop.svg" aria-hidden="true">
+    <img src="/assets/hop.svg" aria-hidden="true" alt="">
   </article>
 
   <article *ngFor="let beer of beers" class="beer-details__wrap-details">
 
     <article>
-      <img src="{{ beer.image_url }}" alt="Bottle of beer {{ beer.name }}.">
+      <div *ngIf="isLoadingImage" class="beer-details__beer-loading">
+        <img src="/assets/loading.gif" alt="Loading image.">
+      </div>
+      <img
+        [src]="beer.image_url ? beer.image_url : '/assets/beer.svg'"
+        alt="Bottle of beer {{ beer.name }}."
+        class="beer-details__beer-image"
+        [ngStyle]="{visibility:isLoadingImage?'hidden':''}"
+        (load)="onHideImageLoader()"
+        (error)="onHideImageLoader()"
+      >
     </article>
 
     <article>
-      <section>
-        <h2>{{ beer.name }}</h2>
-        <p>{{ beer.description }}</p>
-        <blockquote>
+      <section *ngIf="beer.name || beer.description || beer.tagline">
+        <h2 *ngIf="beer.name">{{ beer.name }}</h2>
+        <p *ngIf="beer.description">{{ beer.description }}</p>
+        <blockquote *ngIf="beer.tagline">
           <p>{{ beer.tagline }}</p>
         </blockquote>
       </section>
@@ -75,9 +85,13 @@
     <p>{{ error }}</p>
   </section>
 
-  <h2 *ngIf="beers === null && !isFetching">No beers available!</h2>
+  <section *ngIf="beers === null && !isFetching" class="section">
+    <h2>No beers available!</h2>
+  </section>
 
-  <h2 *ngIf="isFetching && !error">Loading...</h2>
+  <section *ngIf="isFetching && !error" class="beer-details__loading section">
+    <img src="/assets/loading.gif" alt="Loading">
+  </section>
 
 </article>
 

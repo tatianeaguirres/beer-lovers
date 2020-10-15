@@ -54,7 +54,19 @@ a.c-beer-item {
     }
   }
 
-  img {
+  .beer-item__beer-loading {
+    width: auto;
+    height: 18rem;
+    display: flex;
+    align-items: center;
+
+    img {
+      max-width: 10rem;
+      max-height: 10rem;
+    }
+  }
+
+  img.beer-item__beer-image {
     width: auto;
     max-height: 18rem;
   }

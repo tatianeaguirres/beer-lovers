@@ -17,6 +17,7 @@
 
     img {
       max-width: 8rem;
+      max-height: 8rem;
     }
   }
 
@@ -56,7 +57,19 @@
         margin: 0 $global-spacing-md 0 0;
       }
 
-      img {
+      .beer-details__beer-loading {
+        width: auto;
+        height: 20rem;
+        display: flex;
+        align-items: center;
+
+        img {
+          max-width: 10rem;
+          max-height: 10rem;
+        }
+      }
+
+      .beer-details__beer-image {
         width: auto;
         max-height: 20rem;
       }
@@ -69,6 +82,19 @@
     }
   }
 
+  .beer-details__loading {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 50rem;
+
+    img {
+      margin-top: 10rem;
+      max-height: 12rem;
+      max-width: 12rem;
+    }
+  }
+
   h2,
   h3 {
     text-align: left;
@@ -77,48 +103,5 @@
   h3 {
     margin-bottom: $global-spacing-xs;
   }
-
-  blockquote {
-    margin: $global-spacing-xs;
-    text-align: center;
-    color: $color-gray-900;
-    font-style: italic;
-  }
-
-  table{
-    border-collapse: collapse;
-    margin-bottom: $global-spacing-sm;
-
-    svg {
-      transform: rotate(90deg);
-    }
-
-    tr:nth-child(odd) {
-      background-color: $color-gray-100;
-    }
-
-    tr {
-      border-bottom: 1px solid $color-gray-200;
-    }
-
-    th,
-    td {
-      padding: .5rem;
-      vertical-align: middle;
-    }
-
-    th {
-      width: 15rem;
-      text-align: left;
-      font-weight: normal;
-    }
-
-    td {
-      width: 9rem;
-      text-align: center;
-      white-space: nowrap;
-    }
-  }
-
 
 }

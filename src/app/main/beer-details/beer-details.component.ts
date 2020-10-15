@@ -15,6 +15,7 @@ export class BeerDetailsComponent implements OnInit {
   beers: Beer[] = [];
   error = null;
   isFetching = false;
+  isLoadingImage: boolean;
   beerColor: any = null;
   beerColorName: any = null;
   beerColorTable = [
@@ -32,7 +33,9 @@ export class BeerDetailsComponent implements OnInit {
     ['#31302C', 40, 'Black']
   ];
 
-  constructor(private route: ActivatedRoute, private beersService: BeersService) { }
+  constructor(private route: ActivatedRoute, private beersService: BeersService) {
+    this.isLoadingImage = true;
+  }
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
@@ -62,6 +65,10 @@ export class BeerDetailsComponent implements OnInit {
     });
     this.beerColor = this.beerColorTable[0][0];
     this.beerColorName = this.beerColorTable[0][2];
+  }
+
+  onHideImageLoader() {
+    this.isLoadingImage = false;
   }
 
 }
