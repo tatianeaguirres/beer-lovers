@@ -1,0 +1,60 @@
+@import '../../../styles/2-design-tokens/typography';
+@import '../../../styles/2-design-tokens/spacing';
+@import '../../../styles/2-design-tokens/colors';
+@import '../../../styles/2-design-tokens/media-queries';
+
+.c-page-not-found {
+
+  .page-not-found__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: $global-spacing-md;
+
+    @include screen-tablet-portrait-and-bigger {
+      margin-bottom: $global-spacing-xs;
+    }
+
+    img {
+      max-width: 8rem;
+      max-height: 8rem;
+    }
+  }
+
+  .page-not-found__return-link {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+
+    img {
+      max-width: 5rem;
+      max-height: 5rem;
+    }
+  }
+
+  .page-not-found__content {
+    display: flex;
+    flex-direction: column;
+    min-height: 36rem;
+
+    @include screen-tablet-portrait-and-bigger {
+      min-height: 47rem;
+    }
+
+    h2 {
+      text-align: left;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 15rem;
+      margin: $global-spacing-lg auto 0;
+      -webkit-animation: rotate-center 15s ease-in-out 1s infinite both;
+      animation: rotate-center 15s ease-in-out 1s infinite both;
+    }
+  }
+
+}
