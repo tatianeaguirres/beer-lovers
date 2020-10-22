@@ -33,7 +33,7 @@ export class BeerDetailsComponent implements OnInit {
     ['#31302C', 40, 'Black']
   ];
 
-  constructor(private route: ActivatedRoute, private beersService: BeersService) {
+  constructor(private route: ActivatedRoute, public beersService: BeersService) {
     this.isLoadingImage = true;
   }
 
@@ -54,7 +54,7 @@ export class BeerDetailsComponent implements OnInit {
       },
       error => {
         this.isFetching = false;
-        this.error = error.message;
+        this.error = error;
       }
     );
   }

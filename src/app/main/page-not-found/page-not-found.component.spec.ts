@@ -5,7 +5,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 describe('PageNotFoundComponent', () => {
   let component: PageNotFoundComponent;
   let fixture: ComponentFixture<PageNotFoundComponent>;
-  let compiled;
+  let element;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,7 +17,7 @@ describe('PageNotFoundComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PageNotFoundComponent);
     component = fixture.componentInstance;
-    compiled = fixture.nativeElement;
+    element = fixture.nativeElement;
     fixture.detectChanges();
   });
 
@@ -27,25 +27,25 @@ describe('PageNotFoundComponent', () => {
 
   describe('has image', () => {
     it('return icon', () => {
-      expect(compiled.querySelector('a.page-not-found__return-link>img').src).toContain('/assets/return.svg');
+      expect(element.querySelector('a.page-not-found__return-link>img').src).toContain('/assets/return.svg');
     });
     it('hop', () => {
-      expect(compiled.querySelector('.page-not-found__header>img').src).toContain('/assets/hop.svg');
+      expect(element.querySelector('.page-not-found__header>img').src).toContain('/assets/hop.svg');
     });
     it('opener', () => {
-      expect(compiled.querySelector('.page-not-found__content>img').src).toContain('/assets/opener.svg');
+      expect(element.querySelector('.page-not-found__content>img').src).toContain('/assets/opener.svg');
     });
   });
 
   it('should render heading', () => {
-    expect(compiled.querySelector('h2').textContent).toEqual('Oops! The page you were looking for doesn\'t exist');
+    expect(element.querySelector('h2').textContent).toEqual('Oops! The page you were looking for doesn\'t exist');
   });
 
   it('should render paragraph', () => {
-    expect(compiled.querySelector('p').textContent).toEqual(' You may have mistyped the address or the page may have moved. Return to homepage. ');
+    expect(element.querySelector('p').textContent).toEqual(' You may have mistyped the address or the page may have moved. Return to homepage. ');
   });
 
   it('should render link', () => {
-    expect(compiled.querySelector('a.page-not-found__return-link').title).toEqual('Return to homepage.');
+    expect(element.querySelector('a.page-not-found__return-link').title).toEqual('Return to homepage.');
   });
 });

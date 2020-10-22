@@ -32,15 +32,7 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/styles/",
-                "src/styles/1-generic",
-                "src/styles/2-design-tokens",
-                "src/styles/3-elements",
-                "src/styles/4-settings",
-                "src/styles/5-tools",
-                "src/styles/6-skeleton",
-                "src/styles/7-components",
-                "src/styles/8-utilities"
+                "src/styles/2-design-tokens"
               ]
             },
             "scripts": []

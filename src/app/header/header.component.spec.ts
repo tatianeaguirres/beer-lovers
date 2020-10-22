@@ -5,7 +5,7 @@ import { HeaderComponent } from './header.component';
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-  let compiled;
+  let element;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,7 +17,7 @@ describe('HeaderComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
-    compiled = fixture.nativeElement;
+    element = fixture.nativeElement;
     fixture.detectChanges();
   });
 
@@ -26,14 +26,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should render website\'s title', () => {
-    expect(compiled.querySelector('h1').textContent).toEqual('BeerLoversApp');
+    expect(element.querySelector('h1').textContent).toEqual('beerlovers');
   });
 
-  it('should render open menu button', () => {
-    expect(compiled.querySelector('#open-menu').textContent).toEqual('Open menu');
-  });
-
-  it('should render app-navbar', () => {
-    expect(compiled.querySelector('#navbar')).toBeTruthy();
-  });
 });

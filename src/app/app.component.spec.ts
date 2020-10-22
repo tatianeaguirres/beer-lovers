@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   let app: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
-  let compiled;
+  let element;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -21,7 +21,7 @@ describe('AppComponent', () => {
   beforeEach((() => {
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.componentInstance;
-    compiled = fixture.nativeElement;
+    element = fixture.nativeElement;
     fixture.detectChanges();
   }));
 
@@ -30,14 +30,14 @@ describe('AppComponent', () => {
   });
 
   it('should render app-header', () => {
-    expect(compiled.querySelector('app-header')).toBeTruthy();
+    expect(element.querySelector('app-header')).toBeTruthy();
   });
 
   it('should render main', () => {
-    expect(compiled.querySelector('main')).toBeTruthy();
+    expect(element.querySelector('main')).toBeTruthy();
   });
 
   it('should render app-footer', () => {
-    expect(compiled.querySelector('app-footer')).toBeTruthy();
+    expect(element.querySelector('app-footer')).toBeTruthy();
   });
 });

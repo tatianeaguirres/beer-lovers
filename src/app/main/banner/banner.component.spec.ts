@@ -5,6 +5,7 @@ import { BannerComponent } from './banner.component';
 describe('BannerComponent', () => {
   let component: BannerComponent;
   let fixture: ComponentFixture<BannerComponent>;
+  let element;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,6 +17,7 @@ describe('BannerComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BannerComponent);
     component = fixture.componentInstance;
+    element = fixture.nativeElement;
     fixture.detectChanges();
   });
 
@@ -23,8 +25,15 @@ describe('BannerComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should render heading', () => {
+    expect(element.querySelector('h2').textContent).toEqual(' Find the  perfect beer ');
+  });
+
   it('should render paragraph', () => {
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('p').textContent).toEqual('banner works!');
+    expect(element.querySelector('p').textContent).toEqual('Find out which beer is ideal for you or for that special dinner.');
+  });
+
+  it('should render image', () => {
+    expect(element.querySelector('img[src="/assets/signage.svg"]').alt).toContain('Old brewery sign with beer mug.');
   });
 });

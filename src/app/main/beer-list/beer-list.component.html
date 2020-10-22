@@ -1,11 +1,11 @@
 <article class="c-beer-list">
-  <p *ngIf="beers === null && !isFetching">No beers available!</p>
-  <p *ngIf="isFetching && !error">Loading...</p>
+  <p id="beer-list-no-beers-available" *ngIf="beers === null && !isFetching">No beers available!</p>
+  <p id="beer-list-loading" *ngIf="isFetching && !error">Loading...</p>
   <div class="beer-list__wrap" *ngIf="beers != null && !isFetching">
     <app-beer-item *ngFor="let beerItem of beers" [beer]="beerItem"></app-beer-item>
   </div>
-  <div *ngIf="error">
-    <p>An Error Occurred!</p>
+  <div id="beer-list-error" *ngIf="error">
+    <h3>An Error Occurred!</h3>
     <p>{{ error }}</p>
   </div>
 </article>

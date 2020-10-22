@@ -2,10 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';
 
-fdescribe('AboutComponent', () => {
+describe('AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
-  let compiled;
+  let element;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,7 +17,7 @@ fdescribe('AboutComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
-    compiled = fixture.nativeElement;
+    element = fixture.nativeElement;
     fixture.detectChanges();
   });
 
@@ -27,62 +27,62 @@ fdescribe('AboutComponent', () => {
 
   describe('has image', () => {
     it('Woman avatar', () => {
-      expect(compiled.querySelector('section.about__header>img').alt).toContain('Woman in traditional oktoberfest clothes holding a pint of beer');
+      expect(element.querySelector('section.about__header>img').alt).toContain('Woman in traditional oktoberfest clothes holding a pint of beer');
     });
     it('Angular logo', () => {
-      expect(compiled.querySelector('a[title="Angular"]>img').src).toContain('/assets/angular.svg');
+      expect(element.querySelector('a[title="Angular"]>img').src).toContain('/assets/angular.svg');
     });
     it('TypeScript logo', () => {
-      expect(compiled.querySelector('a[title="TypeScript"]>img').src).toContain('/assets/typescript.svg');
+      expect(element.querySelector('a[title="TypeScript"]>img').src).toContain('/assets/typescript.svg');
     });
     it('Sass logo', () => {
-      expect(compiled.querySelector('a[title="Sass"]>img').src).toContain('/assets/sass.svg');
+      expect(element.querySelector('a[title="Sass"]>img').src).toContain('/assets/sass.svg');
     });
     it('Jasmine logo', () => {
-      expect(compiled.querySelector('a[title="Jasmine"]>img').src).toContain('/assets/jasmine.svg');
+      expect(element.querySelector('a[title="Jasmine"]>img').src).toContain('/assets/jasmine.svg');
     });
     it('Karma logo', () => {
-      expect(compiled.querySelector('a[title="Karma"]>img').src).toContain('/assets/karma.png');
+      expect(element.querySelector('a[title="Karma"]>img').src).toContain('/assets/karma.png');
     });
   });
 
   describe('has heading', () => {
     it('h2', () => {
-      expect(compiled.querySelector('h2').textContent).toEqual('About Beer Lovers');
+      expect(element.querySelector('h2').textContent).toEqual('About Beer Lovers');
     });
     it('h3', () => {
-      expect(compiled.querySelector('section.about__tech-stack>h3').textContent).toEqual('Tech Stack');
-      expect(compiled.querySelector('section.about__credits>h3').textContent).toEqual('Credits');
+      expect(element.querySelector('section.about__tech-stack>h3').textContent).toEqual('Tech Stack');
+      expect(element.querySelector('section.about__credits>h3').textContent).toEqual('Credits');
     });
   });
 
   describe('has link', () => {
     it('Tatiane Aguirres', () => {
-      expect(compiled.querySelector('a[href="https://www.tatianeaguirres.com/"]').textContent).toEqual('Tatiane Aguirres');
+      expect(element.querySelector('a[href="https://www.tatianeaguirres.com/"]').textContent).toEqual('Tatiane Aguirres');
     });
     it('Angular', () => {
-      expect(compiled.querySelector('a[href="https://angular.io/"]').textContent).toEqual('Angular');
+      expect(element.querySelector('a[href="https://angular.io/"]').textContent).toEqual('Angular');
     });
     it('GitHub repository', () => {
-      expect(compiled.querySelector('a[href="https://github.com/tatianeaguirres/beer-lovers"]').textContent).toEqual('GitHub repository');
+      expect(element.querySelector('a[href="https://github.com/tatianeaguirres/beer-lovers"]').textContent).toEqual('GitHub repository');
     });
     it('The Punk API', () => {
-      expect(compiled.querySelector('a[href="https://punkapi.com/"]').textContent).toEqual('The Punk API');
+      expect(element.querySelector('a[href="https://punkapi.com/"]').textContent).toEqual('The Punk API');
     });
     it('Brewdog', () => {
-      expect(compiled.querySelector('a[href="https://www.brewdog.com/uk/"]').textContent).toEqual('Brewdog');
+      expect(element.querySelector('a[href="https://www.brewdog.com/uk/"]').textContent).toEqual('Brewdog');
     });
     it('The Simpsons', () => {
-      expect(compiled.querySelector('a[href="https://en.wikipedia.org/wiki/The_Simpsons"]').textContent).toEqual('The Simpsons™');
+      expect(element.querySelector('a[href="https://en.wikipedia.org/wiki/The_Simpsons"]').textContent).toEqual('The Simpsons™');
     });
     it('20th Century Studios, Inc.', () => {
-      expect(compiled.querySelector('a[href="https://www.20thcenturystudios.com/"]').textContent).toEqual('20th Century Studios, Inc');
+      expect(element.querySelector('a[href="https://www.20thcenturystudios.com/"]').textContent).toEqual('20th Century Studios, Inc');
     });
     it('dDara', () => {
-      expect(compiled.querySelector('a[href="https://www.flaticon.com/authors/ddara"]').textContent).toEqual('dDara');
+      expect(element.querySelector('a[href="https://www.flaticon.com/authors/ddara"]').textContent).toEqual('dDara');
     });
     it('Flaticon', () => {
-      expect(compiled.querySelector('a[href="https://www.flaticon.com/"]').textContent).toEqual('Flaticon');
+      expect(element.querySelector('a[href="https://www.flaticon.com/"]').textContent).toEqual('Flaticon');
     });
   });
 });

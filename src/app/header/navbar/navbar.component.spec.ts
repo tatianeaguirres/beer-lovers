@@ -1,23 +1,37 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { NavbarComponent } from './navbar.component';
+import { AboutComponent } from '../../main/about/about.component';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
-  let compiled;
+  let element;
+  let location: Location;
+  let router: Router;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      declarations: [ NavbarComponent ],
+      imports: [
+        RouterTestingModule.withRoutes(
+          [{path: 'about', component: AboutComponent}]
+        )
+      ]
     })
     .compileComponents();
+    router = TestBed.inject(Router);
+    location = TestBed.inject(Location);
+    router.initialNavigation();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
-    compiled = fixture.nativeElement;
+    element = fixture.nativeElement;
     fixture.detectChanges();
   });
 
@@ -25,21 +39,28 @@ describe('NavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render open menu button', () => {
-    expect(compiled.querySelector('#close-menu').textContent).toEqual('Close menu');
+  it('should render heading', () => {
+    expect(element.querySelector('h2').textContent).toEqual('Main menu');
   });
 
   describe('has link', () => {
     it('popular beers', () => {
-      expect(compiled.querySelector('a[href="#popular-beers"]').textContent).toEqual('Popular Beers');
+      expect(element.querySelector('a[href="#popular-beers"]').textContent).toEqual('Popular Beers');
     });
-
     it('food pairing', () => {
-      expect(compiled.querySelector('a[href="#food-pairing"]').textContent).toEqual('Food Pairing');
+      expect(element.querySelector('a[href="#food-pairing"]').textContent).toEqual('Food Pairing');
     });
-
     it('beer expert', () => {
-      expect(compiled.querySelector('a[href="#beer-expert"]').textContent).toEqual('Beer Expert');
+      expect(element.querySelector('a[href="#beer-expert"]').textContent).toEqual('Beer Expert');
+    });
+    it('about', () => {
+      expect(element.querySelector('a[href="/about"]').textContent).toEqual('About');
     });
   });
+
+  it('should navigate to /about', async(() => {
+    router.navigate(['/about']).then(() => {
+      expect(location.path()).toBe('/about');
+    });
+  }));
 });

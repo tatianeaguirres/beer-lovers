@@ -13,8 +13,8 @@ export class FoodPairingComponent implements OnInit {
   beers: Beer[] = [];
   isFetching = false;
   error = null;
-  foodPairing = ['salad', 'beef', 'chicken', 'fish', 'pasta', 'burger'];
-  activeIndex;
+  foodPairing = ['Salad', 'Beef', 'Chicken', 'Fish', 'Pasta', 'Burger'];
+  activeIndex: number;
 
   constructor(private beersService: BeersService) {}
 

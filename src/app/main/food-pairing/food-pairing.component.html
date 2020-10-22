@@ -6,7 +6,8 @@
       *ngFor="let foodPairingItem of foodPairing;let index = index"
       (click)="onFilterByFoodPairing(foodPairingItem, index)"
       [ngClass]="{ 'button__selection--active' : index === activeIndex }"
-        class="button__selection"
+      class="button__selection"
+      id="{{foodPairingItem}}-food-pairing-button"
     >
       {{ foodPairingItem }}
     </button>

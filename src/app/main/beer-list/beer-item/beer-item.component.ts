@@ -11,11 +11,11 @@ export class BeerItemComponent implements OnInit {
   @Input() beer: Beer;
   isLoadingImage: boolean;
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit() {
     this.isLoadingImage = true;
   }
-
-  ngOnInit() { }
 
   onHideImageLoader() {
     this.isLoadingImage = false;
