@@ -21,8 +21,8 @@ describe('BeerDetailsComponent', () => {
       }
     }
   };
-  const mockBeersService = jasmine.createSpyObj('BeersService', ['fetchBeerById']);
-  const fetchBeerByIdSpy = mockBeersService.fetchBeerById.and.returnValue(of(mockData));
+  const mockBeersService = jasmine.createSpyObj('BeersService', ['searchBeers']);
+  const searchBeersSpy = mockBeersService.searchBeers.and.returnValue(of(mockData));
 
   beforeEach(async(() => {
     TestBed
@@ -52,8 +52,8 @@ describe('BeerDetailsComponent', () => {
     expect(component.id).toEqual(mockId);
   });
 
-  it('should make a call to BeersService.fetchBeerById()', () => {
-    expect(fetchBeerByIdSpy.calls.any()).toBe(true, 'fetchBeerById called');
+  it('should make a call to BeersService.searchBeers()', () => {
+    expect(searchBeersSpy.calls.any()).toBe(true, 'searchBeers called');
   });
 
   it('should show beer details after component initialized', () => {
@@ -100,9 +100,9 @@ describe('BeerDetailsComponent', () => {
     expect(component.beerColor).toBe('#F49F44');
   });
 
-  it('should have false isFetching when fetchBeerById() is called', () => {
+  it('should have false isFetching when searchBeers() is called', () => {
     component.isFetching = true;
-    component.onFetchBeers(mockId);
+    component.searchBeers(mockId);
     expect(component.isFetching).toBe(false);
   });
 

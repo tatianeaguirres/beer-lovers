@@ -39,18 +39,16 @@ export class BeerDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
-    this.onFetchBeers(this.id);
+    this.searchBeers(this.id);
   }
 
-  onFetchBeers(id: string) {
+  searchBeers(id: string) {
     this.isFetching = true;
-    this.beersService.fetchBeerById(id).subscribe(
-      beers => {
+    this.beersService.searchBeers('id', id, '1').subscribe(
+      beer => {
         this.isFetching = false;
-        this.beers = beers;
-        if (this.beers[0].srm) {
-          this.onDeterminesBeerColor(this.beers[0].srm);
-        }
+        this.beers = beer;
+        if (this.beers[0].srm) { this.onDeterminesBeerColor(this.beers[0].srm); }
       },
       error => {
         this.isFetching = false;

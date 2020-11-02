@@ -12,8 +12,8 @@ describe('PopularBeersComponent', () => {
   let element;
   const mockType = 'Weisse';
   const mockData = beerMock;
-  const mockBeersService = jasmine.createSpyObj('BeersService', ['fetchBeerByType']);
-  const fetchBeerByTypeSpy = mockBeersService.fetchBeerByType.and.returnValue(of(mockData));
+  const mockBeersService = jasmine.createSpyObj('BeersService', ['searchBeers']);
+  const searchBeersSpy = mockBeersService.searchBeers.and.returnValue(of(mockData));
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -35,13 +35,13 @@ describe('PopularBeersComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should make a call to BeersService.fetchBeerByType()', () => {
-    expect(fetchBeerByTypeSpy.calls.any()).toBe(true, 'fetchBeerByType called');
+  it('should make a call to BeersService.searchBeers()', () => {
+    expect(searchBeersSpy.calls.any()).toBe(true, 'searchBeers called');
   });
 
-  it('should have false isFetching when fetchBeerByType() is called', () => {
+  it('should have false isFetching when searchBeers() is called', () => {
     component.isFetching = true;
-    component.onFetchBeers(mockType);
+    component.searchBeers(mockType);
     expect(component.isFetching).toBe(false);
   });
 

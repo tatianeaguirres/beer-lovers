@@ -14,26 +14,26 @@ export class PopularBeersComponent implements OnInit {
   isFetching = false;
   error = null;
   beerTypes = ['IPA', 'Lager', 'Stout', 'Pale Ale', 'Porter', 'Weisse'];
-  activeIndex;
+  activeIndex: number;
 
   constructor(private beersService: BeersService) {}
 
   ngOnInit() {
-    this.onFetchBeers(this.beerTypes[0]);
+    this.searchBeers(this.beerTypes[0]);
     this.activeIndex = 0;
   }
 
   onFilterByBeerType(type: string, index: number) {
     this.activeIndex = index;
-    this.onFetchBeers(type);
+    this.searchBeers(type);
   }
 
-  onFetchBeers(type: string) {
+  searchBeers(type: string) {
     this.isFetching = true;
-    this.beersService.fetchBeerByType(type).subscribe(
-      beers => {
+    this.beersService.searchBeers('beer_name', type, '4').subscribe(
+      beer => {
         this.isFetching = false;
-        this.beers = beers;
+        this.beers = beer;
       },
       error => {
         this.isFetching = false;
@@ -41,5 +41,4 @@ export class PopularBeersComponent implements OnInit {
       }
     );
   }
-
 }

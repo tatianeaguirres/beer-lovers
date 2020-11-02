@@ -18,8 +18,8 @@ describe('BeerExpertComponent', () => {
   let router: Router;
   const mockId = '192';
   const mockData = beerMock;
-  const mockBeersService = jasmine.createSpyObj('BeersService', ['fetchRandomBeer']);
-  const fetchRandomBeerSpy = mockBeersService.fetchRandomBeer.and.returnValue(of(mockData));
+  const mockBeersService = jasmine.createSpyObj('BeersService', ['getRandomBeer']);
+  const getRandomBeerSpy = mockBeersService.getRandomBeer.and.returnValue(of(mockData));
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -49,8 +49,8 @@ describe('BeerExpertComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should make a call to BeersService.fetchRandomBeer()', () => {
-    expect(fetchRandomBeerSpy.calls.any()).toBe(true, 'fetchRandomBeer called');
+  it('should make a call to BeersService.getRandomBeer()', () => {
+    expect(getRandomBeerSpy.calls.any()).toBe(true, 'getRandomBeer called');
   });
 
   it('should have image', () => {

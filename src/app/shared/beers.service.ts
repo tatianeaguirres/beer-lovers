@@ -1,65 +1,83 @@
-import { EventEmitter, Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
+import { map, catchError, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { Beer } from './beer.model';
 
 @Injectable({ providedIn: 'root' })
 export class BeersService {
-  beerSelected = new EventEmitter<Beer>();
+
+  readonly beersUrl = 'https://api.punkapi.com/v2/beers/';
+  readonly randomBeerUrl = `${this.beersUrl}random`;
 
   constructor(private http: HttpClient) {}
 
-  fetchBeerByFood(food: string) {
-    let searchParams = new HttpParams();
-    searchParams = searchParams.append('per_page', '4');
-    searchParams = searchParams.append('food', food);
-    return this.fetchBeers(false, searchParams);
+  /** GET random beer from the server. */
+  getRandomBeer(): Observable<Beer[]> {
+    return this.http.get<Beer[]>(this.randomBeerUrl)
+    .pipe(
+      map(beer => {
+        return beer ? Object.assign([], beer) : null;
+      }),
+      tap(beer => this.log(`fetched random beer`)),
+      catchError(this.handleError('getRandomBeer'))
+    ) as Observable<Beer[]>;
   }
 
-  fetchBeerByType(type: string) {
-    let searchParams = new HttpParams();
-    searchParams = searchParams.append('per_page', '4');
-    searchParams = searchParams.append('beer_name', type);
-    return this.fetchBeers(false, searchParams);
-  }
+  /**
+   * GET beers whose contains search term.
+   * @param param - name of the URL parameter filter
+   * @param term - name of the operation that failed
+   * @param perPage - name of the term associated with the URL filter parameter above
+   */
+  searchBeers(param: string, term: string, perPage: string): Observable<Beer[]> {
+    param = param.trim();
+    term = term.trim();
+    perPage = perPage.trim();
 
-  fetchRandomBeer() {
-    return this.fetchBeers(true);
-  }
+    let options = new HttpParams();
+    options = options.append(param, term);
+    options = options.append('per_page', perPage);
 
-  fetchBeerById(id: string) {
-    let searchParams = new HttpParams();
-    searchParams = searchParams.append('ids', id);
-    return this.fetchBeers(false, searchParams);
-  }
-
-  fetchBeers(random?: boolean, searchParams?: HttpParams) {
-    let url: string;
-    if (random) {
-      url = 'https://api.punkapi.com/v2/beers/random';
-    } else {
-      url = 'https://api.punkapi.com/v2/beers/';
-    }
-    return this.http
-      .get<{ [key: number]: Beer }>(url,
+    return this.http.get<Beer[]>(this.beersUrl,
       {
-        params: searchParams,
+        params: options,
         responseType: 'json'
-      }).pipe(
-        map(responseData => {
-          const beersArray: Beer[] = [];
-          for (const key in responseData) {
-            if (responseData.hasOwnProperty(key)) {
-              beersArray.push({ ...responseData[key]});
-            }
-          }
-          return beersArray;
+      })
+      .pipe(
+        map(beers => {
+          return beers ? Object.assign([], beers) : null;
         }),
-        catchError(errorRes => {
-          return throwError(errorRes);
-        })
+        tap(h => {
+          const outcome = h ? `fetched` : `did not find`;
+          this.log(`${outcome} beers by ${param}=${term}`);
+        }),
+        catchError(this.handleError<Beer[]>(`searchBeers ${param}=${term}`))
       );
+  }
+
+  /**
+   * Returns a function that handles Http operation failures.
+   * This error handler lets the app continue to run as if no error occurred.
+   * @param operation - name of the operation that failed
+   */
+  private handleError<T>(operation = 'operation') {
+    return (error: HttpErrorResponse): Observable<T> => {
+
+      // Simulation: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      const message = (error.error instanceof ErrorEvent) ?
+        error.error.message :
+        `server returned code ${error.status} with body "${error.error}"`;
+
+      throw new Error(`${operation} failed: ${message}`);
+    };
+
+  }
+
+  private log(message: string) {
+    console.log('BeersService: ' + message);
   }
 }

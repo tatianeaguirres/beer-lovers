@@ -16,13 +16,13 @@ export class BeerExpertComponent implements OnInit {
   constructor(private beersService: BeersService) {}
 
   ngOnInit() {
-    this.onFetchBeers();
+    this.getRandomBeer();
   }
 
-  onFetchBeers() {
-    this.beersService.fetchRandomBeer().subscribe(
-      beers => {
-        this.beers = beers;
+  getRandomBeer() {
+    this.beersService.getRandomBeer().subscribe(
+      beer => {
+        this.beers = beer;
       },
       error => {
         this.error = error.message;
