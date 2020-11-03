@@ -28,8 +28,8 @@ export class BeersService {
   /**
    * GET beers whose contains search term.
    * @param param - name of the URL parameter filter
-   * @param term - name of the operation that failed
-   * @param perPage - name of the term associated with the URL filter parameter above
+   * @param term - name of the term associated with the URL filter parameter above
+   * @param perPage - amount of beers returned in each request
    */
   searchBeers(param: string, term: string, perPage: string): Observable<Beer[]> {
     param = param.trim();

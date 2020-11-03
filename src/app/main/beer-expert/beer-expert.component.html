@@ -6,12 +6,13 @@
     loading="lazy"
   >
   <div *ngFor="let beer of beers">
-    <h2>Discover your beer!</h2>
-    <p>Our beer expert will choose a beer for you. Are you ready?</p>
+    <h2 id="title-beer-expert">Discover your beer!</h2>
+    <p id="description-beer-expert">Our beer expert will choose a beer for you. Are you ready?</p>
     <a
       [routerLink]="['/beer', beer.id]"
       aria-label="Go to the beer details that Homer chose for you."
       class="button__primary"
+      id="button-beer-expert"
     >Show me</a>
   </div>
 </article>

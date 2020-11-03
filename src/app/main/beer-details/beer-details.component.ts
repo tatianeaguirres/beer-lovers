@@ -44,7 +44,7 @@ export class BeerDetailsComponent implements OnInit {
 
   searchBeers(id: string) {
     this.isFetching = true;
-    this.beersService.searchBeers('id', id, '1').subscribe(
+    this.beersService.searchBeers('ids', id, '1').subscribe(
       beer => {
         this.isFetching = false;
         this.beers = beer;

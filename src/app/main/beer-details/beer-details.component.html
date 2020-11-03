@@ -34,8 +34,8 @@
 
       <section id="food-pairing-section" *ngIf="beer.food_pairing">
         <h3>Food Pairing</h3>
-        <ul>
-          <li id="food-item-{{index}}" *ngFor="let foodItem of beer.food_pairing;let index = index">{{ foodItem }}.</li>
+        <ul class="beer-details__food-pairing-list">
+          <li class="beer-details__food-pairing-item" id="food-item-{{index}}" *ngFor="let foodItem of beer.food_pairing;let index = index">{{ foodItem }}.</li>
         </ul>
       </section>
 
