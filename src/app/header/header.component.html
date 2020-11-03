@@ -1,15 +1,15 @@
 <header class="c-header">
-  <a [routerLink]="['/']">
-    <h1 id="header-logo">beer<b>lovers</b></h1>
+  <a [routerLink]="['/']" aria-label="Go to homepage">
+    <h1 id="header-logo" aria-label="Beer Lovers"><span aria-hidden="true">beer<b>lovers</b></span></h1>
   </a>
   <button
     id="open-menu"
     class="u-mobile-only button__icon"
     (click)="showMenu()"
-    aria-label="open menu"
+    aria-label="Open menu"
     [attr.aria-hidden]="isMobile ? false : true"
   >
-    <img src="/assets/menu.svg" alt="">
+    <img src="/assets/menu.svg" alt="" aria-hidden="true">
   </button>
   <app-navbar id="navbar" class="u-desktop-only"></app-navbar>
 </header>

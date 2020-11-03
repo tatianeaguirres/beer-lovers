@@ -46,6 +46,6 @@ describe('PageNotFoundComponent', () => {
   });
 
   it('should render link', () => {
-    expect(element.querySelector('a.page-not-found__return-link').title).toEqual('Return to homepage.');
+    expect(element.querySelector('a.page-not-found__return-link').ariaLabel).toEqual('Return to homepage.');
   });
 });

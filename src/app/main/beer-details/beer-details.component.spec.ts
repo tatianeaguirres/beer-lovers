@@ -57,12 +57,12 @@ describe('BeerDetailsComponent', () => {
   });
 
   it('should show beer details after component initialized', () => {
-    expect(element.querySelector('h2#beer-name').textContent).toBe('Punk IPA 2007 - 2010');
-    expect(element.querySelector('p#beer-description').textContent).toBe('This is James and Martin\'s original take on an American IPA, subverted with punchy New Zealand hops.');
-    expect(element.querySelector('p#beer-tagline').textContent).toBe('Post Modern Classic. Spiky. Tropical. Hoppy.');
-    expect(element.querySelector('li#food-item-0').textContent).toBe('Spicy carne asada with a pico de gallo sauce.');
-    expect(element.querySelector('li#food-item-1').textContent).toBe('Shredded chicken tacos with a mango chilli lime salsa.');
-    expect(element.querySelector('li#food-item-2').textContent).toBe('Cheesecake with a passion fruit swirl sauce.');
+    expect(element.querySelector('h2#beer-name').textContent.trim()).toBe('Punk IPA 2007 - 2010');
+    expect(element.querySelector('p#beer-description').textContent.trim()).toBe('This is James and Martin\'s original take on an American IPA, subverted with punchy New Zealand hops.');
+    expect(element.querySelector('p#beer-tagline').textContent.trim()).toBe('Post Modern Classic. Spiky. Tropical. Hoppy.');
+    expect(element.querySelector('li#food-item-0').textContent.trim()).toBe('Spicy carne asada with a pico de gallo sauce.');
+    expect(element.querySelector('li#food-item-1').textContent.trim()).toBe('Shredded chicken tacos with a mango chilli lime salsa.');
+    expect(element.querySelector('li#food-item-2').textContent.trim()).toBe('Cheesecake with a passion fruit swirl sauce.');
     expect(element.querySelector('td#beer-srm').textContent).toBe('8.5');
     expect(element.querySelector('td#beer-ebc').textContent).toBe('17');
     expect(element.querySelector('td#beer-abv').textContent).toBe('6%');
@@ -83,7 +83,7 @@ describe('BeerDetailsComponent', () => {
 
   describe('has image', () => {
     it('return icon', () => {
-      expect(element.querySelector('a[title="Return to homepage."]>img').src).toContain('/assets/return.svg');
+      expect(element.querySelector('a[aria-label="Return to homepage."]>img').src).toContain('/assets/return.svg');
     });
     it('hop', () => {
       expect(element.querySelector('img#hop-image').src).toContain('/assets/hop.svg');

@@ -4,8 +4,8 @@
   <div class="beer-list__wrap" *ngIf="beers != null && !isFetching">
     <app-beer-item *ngFor="let beerItem of beers" [beer]="beerItem"></app-beer-item>
   </div>
-  <div id="beer-list-error" *ngIf="error">
-    <h3>An Error Occurred!</h3>
+  <section id="beer-list-error" *ngIf="error" aria-labelledby="beer-list-error-title">
+    <h3 id="beer-list-error-title">An Error Occurred!</h3>
     <p>{{ error }}</p>
-  </div>
+  </section>
 </article>
