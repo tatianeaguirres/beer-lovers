@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() { }
 
   showMenu(){
-    let navbar = document.getElementById('navbar');
+    const navbar = document.getElementById('navbar');
     navbar.classList.remove('u-desktop-only');
     navbar.classList.remove('header__navbar--hide');
     navbar.classList.add('header__navbar--show');
