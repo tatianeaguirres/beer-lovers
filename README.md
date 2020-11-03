@@ -1,5 +1,7 @@
 # 🍺 BeerLoversApp
 
+[![Actions Status](https://github.com/tatianeaguirres/beer-lovers/workflows/Build,%20Test%20and%20Deploy/badge.svg)](https://github.com/tatianeaguirres/beer-lovers/actions)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
