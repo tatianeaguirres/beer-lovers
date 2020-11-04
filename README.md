@@ -2,6 +2,8 @@
 
 [![Actions Status](https://github.com/tatianeaguirres/beer-lovers/workflows/Build,%20Test%20and%20Deploy/badge.svg)](https://github.com/tatianeaguirres/beer-lovers/actions) 
 
+Don't forget to give this project a star. ⭐
+
 [![Screenshots of the Beer Lovers App in 3 screen dimensions: laptop, tablet and cell phone.](https://beer-lovers-app.herokuapp.com/assets/screenshot-devices.png)](https://beer-lovers-app.herokuapp.com/)
 
 ## About
@@ -14,17 +16,17 @@ This website was made by [Tatiane Aguirres](https://tatianeaguirres.com/) as a f
 
 ## Tech Stack 
 
-- [Angular 9](https://angular.io/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Sass](https://sass-lang.com/)
-- [Jasmine](https://jasmine.github.io/)
-- [Karma](https://karma-runner.github.io/)
-- [Protractor](https://www.protractortest.org/)
-- [TSLint](https://palantir.github.io/tslint/)
-- [Wave](https://wave.webaim.org/)
-- [GitHub Actions](https://github.com/features/actions)
-- [Heroku](https://www.heroku.com/)
-- [Gitmoji](https://gitmoji.carloscuesta.me)
+- [TypeScript](https://www.typescriptlang.org/) as the programming language
+- [Angular 9](https://angular.io/) as the TypeScript-based framework
+- [Sass](https://sass-lang.com/) as the preprocessor scripting language
+- [Jasmine](https://jasmine.github.io/) as the testing framework
+- [Karma](https://karma-runner.github.io/) as the testing runner
+- [Protractor](https://www.protractortest.org/) as the end-to-end test framework
+- [TSLint](https://palantir.github.io/tslint/) as the static code analysis tool
+- [Wave](https://wave.webaim.org/) as the accessibility tool
+- [GitHub Actions](https://github.com/features/actions) as the CI/CD tool
+- [Heroku](https://www.heroku.com/) as the cloud platform to publish the app
+- [Gitmoji](https://gitmoji.carloscuesta.me) as the emoji guide for GitHub commit messages
 
 ## Requirements
 
