@@ -30,19 +30,28 @@ describe('AboutComponent', () => {
       expect(element.querySelector('section.about__header>img').alt).toContain('Woman in traditional oktoberfest clothes holding a pint of beer');
     });
     it('Angular logo', () => {
-      expect(element.querySelector('a[aria-label="Angular"]>img').src).toContain('/assets/angular.svg');
+      expect(element.querySelector('a[title="Angular"]>img').src).toContain('/assets/angular.svg');
     });
     it('TypeScript logo', () => {
-      expect(element.querySelector('a[aria-label="TypeScript"]>img').src).toContain('/assets/typescript.svg');
+      expect(element.querySelector('a[title="TypeScript"]>img').src).toContain('/assets/typescript.svg');
     });
     it('Sass logo', () => {
-      expect(element.querySelector('a[aria-label="Sass"]>img').src).toContain('/assets/sass.svg');
+      expect(element.querySelector('a[title="Sass"]>img').src).toContain('/assets/sass.svg');
     });
     it('Jasmine logo', () => {
-      expect(element.querySelector('a[aria-label="Jasmine"]>img').src).toContain('/assets/jasmine.svg');
+      expect(element.querySelector('a[title="Jasmine"]>img').src).toContain('/assets/jasmine.svg');
     });
     it('Karma logo', () => {
-      expect(element.querySelector('a[aria-label="Karma"]>img').src).toContain('/assets/karma.png');
+      expect(element.querySelector('a[title="Karma"]>img').src).toContain('/assets/karma.png');
+    });
+    it('Protractor logo', () => {
+      expect(element.querySelector('a[title="Protractor"]>img').src).toContain('/assets/protractor.png');
+    });
+    it('GitHub Actions logo', () => {
+      expect(element.querySelector('a[title="GitHub Actions"]>img').src).toContain('/assets/github-actions.png');
+    });
+    it('Heroku logo', () => {
+      expect(element.querySelector('a[title="Heroku"]>img').src).toContain('/assets/heroku.svg');
     });
   });
 
