@@ -2,11 +2,11 @@
 
 [![Actions Status](https://github.com/tatianeaguirres/beer-lovers/workflows/Build,%20Test%20and%20Deploy/badge.svg)](https://github.com/tatianeaguirres/beer-lovers/actions) 
 
-[![Screenshots of the Beer Lovers App in 3 screen dimensions: laptop, tablet and cell phone.](/assets/screenshot-devices.png)](https://beer-lovers-app.herokuapp.com/)
+[![Screenshots of the Beer Lovers App in 3 screen dimensions: laptop, tablet and cell phone.](https://beer-lovers-app.herokuapp.com/assets/screenshot-devices.png)](https://beer-lovers-app.herokuapp.com/)
 
 ## About
 
-[Beer Lovers](https://beer-lovers-app.herokuapp.com/) is a website where you can find information on great beers by type or pairing of food. You may even be surprised by our beer expert, who will choose the ideal beer for you.
+[Beer Lovers](https://beer-lovers-app.herokuapp.com/) is a website where you can find information on great beers by type or food pairing. You may even be surprised by our beer expert, who will choose the ideal beer for you.
 
 This project has no commercial or profitable purpose. It uses [The Punk API](https://punkapi.com/), which is a free and open-source API with [Brewdog](https://www.brewdog.com/uk/)'s catalogue of beer.
 
@@ -66,7 +66,7 @@ Npm version: v6.14.5
 
 - Mobile-first.
 - Fully responsive app for all screen sizes.
-- App accessible to all users, including keyboard users and screen readers users.
+- App accessible to all users, including keyboard users and screen reader users.
 - CSS structure based on [Matthias Ott's post](https://matthiasott.com/notes/how-i-structure-my-css/).
 
 ## Further help
